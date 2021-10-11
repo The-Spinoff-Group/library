@@ -9,3 +9,6 @@ RUN npm i --production
 
 COPY . /usr/src/app
 RUN npm run build
+
+CMD [ "/usr/local/bin/node", "/usr/src/app/server/index.js" ]
+

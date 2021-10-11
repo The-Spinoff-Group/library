@@ -35,6 +35,9 @@ app.set('views', [path.join(__dirname, '../custom/layouts'), path.join(__dirname
 app.get('/healthcheck', (req, res) => {
   res.send('OK')
 })
+app.get('/_ah/start', (req, res) => {
+  res.status(404).send('Not found')
+})
 
 app.use(csp({directives: customCsp}))
 app.use(userAuth)
